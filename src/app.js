@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-// import authRoutes from './routes/auth.routes.js';
+import authRoutes from './routes/auth.routes.js';
 
 dotenv.config();
 
@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 // Rotas públicas
-// app.use('/auth', authRoutes);
+app.use('/auth', authRoutes);
 
 // Rota simples para teste
 app.get('/', (req, res) => {
