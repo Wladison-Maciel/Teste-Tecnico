@@ -15,6 +15,6 @@ export default (sequelize, DataTypes) =>
     dueDate: DataTypes.DATE,
     userId: DataTypes.INTEGER,
   }, {
-    tableName: 'tasks',
+    tableName: 'Tasks',
     timestamps: true,
   });
