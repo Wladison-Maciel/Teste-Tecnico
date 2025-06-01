@@ -1,5 +1,6 @@
-// src/app/controllers/taskController.js
 import db from '../models/index.js';
+import { findTaskByIdForUser } from '../services/taskService.js';
+import { taskCreateSchema, taskUpdateSchema } from '../validations/taskValidation.js';
 
 const { Task } = db;
 
@@ -30,22 +31,11 @@ export const getTasks = async (req, res) => {
 // Buscar uma task específica por ID
 export const getTaskById = async (req, res) => {
   const id = parseInt(req.params.id, 10);
-  const userId = Number(req.userId);  // converter para number
-
-  if (isNaN(id)) return res.status(400).json({ error: "ID inválido." });
-
   try {
-    const task = await Task.findOne({
-      where: { id, userId }, // userId numérico
-    });
-
-    if (!task) {
-      return res.status(404).json({ error: 'Tarefa não encontrada.' });
-    }
-
-    return res.json(task);
-  } catch (error) {
-    return res.status(500).json({ error: 'Erro ao buscar tarefa.', details: error.message });
+    const task = await findTaskByIdForUser(id, req.userId);
+    res.json(task);
+  } catch (err) {
+    res.status(404).json({ error: err.message });
   }
 };
 
@@ -72,14 +62,12 @@ export const createTask = async (req, res) => {
 
 // Atualizar uma task
 export const updateTask = async (req, res) => {
-  const { id } = req.params;
-  const { title, description, status, dueDate } = req.body;
+  const id = parseInt(req.params.id, 10);
 
   try {
-    const task = await Task.findOne({ where: { id, userId: req.userId } });
-    if (!task) {
-      return res.status(404).json({ error: 'Tarefa não encontrada.' });
-    }
+    const task = await findTaskByIdForUser(id, req.userId);
+
+    const { title, description, status, dueDate } = req.body;
 
     task.title = title ?? task.title;
     task.description = description ?? task.description;
@@ -87,9 +75,9 @@ export const updateTask = async (req, res) => {
     task.dueDate = dueDate ?? task.dueDate;
 
     await task.save();
-    return res.json(task);
+    res.json(task);
   } catch (error) {
-    return res.status(500).json({ error: 'Erro ao atualizar tarefa.' });
+    res.status(500).json({ error: 'Erro ao atualizar tarefa.', details: error.message });
   }
 };
 
