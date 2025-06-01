@@ -1,6 +1,6 @@
 // src/models/user.js
 export default (sequelize, DataTypes) =>
-  sequelize.define('User', {
+  sequelize.define('Users', {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -13,7 +13,7 @@ export default (sequelize, DataTypes) =>
     },
     password: DataTypes.STRING,
   }, {
-    tableName: 'users',
+    tableName: 'Users',
     timestamps: true,
     createdAt: true,
     updatedAt: false,
