@@ -9,7 +9,7 @@ export default (sequelize, DataTypes) =>
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
     status: {
-      type: DataTypes.ENUM('PENDING', 'IN_PROGRESS', 'COMPLETED'),
+      type: DataTypes.ENUM('PENDING', 'COMPLETED'),
       defaultValue: 'PENDING',
     },
     dueDate: DataTypes.DATE,
