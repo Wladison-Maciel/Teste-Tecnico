@@ -5,7 +5,7 @@ import db from '../models/index.js';
 const { User } = db;
 
 export default {
-  async signup(req, res) {
+  async register(req, res) {
     const { name, email, password } = req.body;
 
     try {
