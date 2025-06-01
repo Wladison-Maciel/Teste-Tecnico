@@ -37,7 +37,7 @@ export default {
       if (!valid) return res.status(401).json({ message: 'Senha inválida' });
 
       const token = jwt.sign(
-        { userId: user.id },
+        { id: user.id },
         process.env.APP_SECRET,
         { expiresIn: '1d' }
       );
