@@ -11,7 +11,7 @@ export async function up(queryInterface, Sequelize) {
       allowNull: false,
     },
     description: {
-      type: Sequelize.STRING(200), // descrição opcional com até 500 caracteres
+      type: Sequelize.STRING(200), // descrição opcional com até 200 caracteres
       allowNull: true,
     },
     status: {
