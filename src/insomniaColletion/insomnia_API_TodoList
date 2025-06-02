@@ -1,0 +1,244 @@
+type: collection.insomnia.rest/5.0
+name: TesteTecnico
+meta:
+  id: wrk_cba05015da0e4852a5e210bbffc991f7
+  created: 1748791868126
+  modified: 1748791868126
+collection:
+  - name: Auth
+    meta:
+      id: fld_afa313fabdd6413a93019e21ad7f0238
+      created: 1748798354830
+      modified: 1748872891466
+      sortKey: -1748798354830
+    children:
+      - url: http://localhost:3000/auth/register
+        name: Register
+        meta:
+          id: req_ac1b449b7ed24c9ebf472b850a3d5e85
+          created: 1748798347869
+          modified: 1748872906989
+          isPrivate: false
+          sortKey: -1748798362640
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "wladison",
+              "email": "Wladison@teste.com",
+              "password": "senha12"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/auth/login
+        name: Login
+        meta:
+          id: req_284681b484d7400aaa37f484d8b76b6d
+          created: 1748798732366
+          modified: 1748872912615
+          isPrivate: false
+          sortKey: -1748798732366
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "email": "Wladison@teste.com",
+              "password": "senha12"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Tasks
+    meta:
+      id: fld_30f9b03007404083bdc30422fc01bf77
+      created: 1748804824064
+      modified: 1748804824064
+      sortKey: -1748804824064
+    children:
+      - url: http://localhost:3000/tasks/7
+        name: Deletar Única Tarefa
+        meta:
+          id: req_97f93d92e8814e3daa869f96da0bafd2
+          created: 1748804826959
+          modified: 1748872653356
+          isPrivate: false
+          sortKey: -1748804829752
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+            id: pair_2eed8411f2de45c99c6f64c1fc6e9ccd
+          - id: pair_12e4ce8117d04ada92d607e8e9ed71bc
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzQ4ODY5MjE4LCJleHAiOjE3NDg5NTU2MTh9.DmPt_VBuCF3Hlq6gdyjqSqFOGxEF5f8Xhx_bTw01K7I
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/tasks/7
+        name: Atualizar Única Tarefa
+        meta:
+          id: req_52a71e68f8b144a58eb7d577b648bd13
+          created: 1748804832064
+          modified: 1748873029843
+          isPrivate: false
+          sortKey: -1748804832064
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title":"Estudar NestJS"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_27aae03ecb5f48c99d2db047e1251829
+          - name: User-Agent
+            value: insomnia/11.1.0
+            id: pair_5236fd4600a04f4daaaf98d9e15fb1a9
+          - id: pair_2ec660cb5b4f45eb99e4e2f7617f8dd0
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzQ4ODY5MjE4LCJleHAiOjE3NDg5NTU2MTh9.DmPt_VBuCF3Hlq6gdyjqSqFOGxEF5f8Xhx_bTw01K7I
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/tasks
+        name: Criar Única Tarefa
+        meta:
+          id: req_82b1b0b140774082a2113410601540a0
+          created: 1748804832412
+          modified: 1748872960615
+          isPrivate: false
+          sortKey: -1748804832412
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+            	"title": "Estudar para trabalhar na REIS SOFTWARES",
+              "description": "Focar em Aprender tudo",
+              "status": "PENDING",
+              "dueDate": "2025-06-02"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_c232f923a0e84cdf9c318cad56b35a21
+          - name: User-Agent
+            value: insomnia/11.1.0
+            id: pair_1f32a8c0ba6c4d2f9c27671b8299dbde
+          - id: pair_6ab8b0c3882f4367b6a0ac8345002fbe
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzQ4ODY4NzAzLCJleHAiOjE3NDg5NTUxMDN9.aROSispYJiWwvKBR0rtGpeVnFrA94tiqU8EsduWBqQA
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/tasks
+        name: Listar Tarefas
+        meta:
+          id: req_ca7cb843de474c1ba356f268e1a6dc5b
+          created: 1748804832814
+          modified: 1748868782290
+          isPrivate: false
+          sortKey: -1748804832814
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+            id: pair_c2307523a9f14c54b0067e065ebda7ba
+          - id: pair_2ccb055f07af4d67a53fbc0cb9772e21
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzQ4ODY4NzAzLCJleHAiOjE3NDg5NTUxMDN9.aROSispYJiWwvKBR0rtGpeVnFrA94tiqU8EsduWBqQA
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/tasks/6
+        name: Listar Única Tarefa
+        meta:
+          id: req_44c1cd03e326416b8e20961a676409cc
+          created: 1748806425370
+          modified: 1748872608459
+          isPrivate: false
+          sortKey: -1748804832613
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+            id: pair_6f41db0eb924452ebabf1c176463965f
+          - id: pair_cd1d3d9f58fd4e1db2aabfc27f5f7842
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzQ4ODY5NzkwLCJleHAiOjE3NDg5NTYxOTB9.vfzBS4q3GpmFxtcqPwsEe6RRj6r_ApZhdXYXdWZNM6k
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c9d8af836dd3f32a2ad3fa0e47622a35ee33d591
+    created: 1748791868135
+    modified: 1748791868135
+environments:
+  name: Base Environment
+  meta:
+    id: env_c9d8af836dd3f32a2ad3fa0e47622a35ee33d591
+    created: 1748791868130
+    modified: 1748791868130
+    isPrivate: false
