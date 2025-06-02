@@ -8,8 +8,8 @@ const test = async () => {
     await db.sequelize.authenticate();
     console.log('✅ Conectado ao banco com sucesso.');
 
-    const userId = 2;
-    const taskId = 2;
+    const userId = 4;
+    const taskId = 5;
 
     const task = await findTaskByIdForUser(taskId, userId);
     console.log('🎯 Tarefa encontrada:', task.toJSON());
