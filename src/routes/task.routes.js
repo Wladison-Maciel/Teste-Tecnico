@@ -2,10 +2,10 @@
 import { Router } from 'express';
 import {
   getTasks,
+  getTaskById,
   createTask,
   updateTask,
   deleteTask,
-  getTaskById,
 } from '../controllers/taskController.js';
 import authMiddleware from '../middlewares/authMiddleware.js';
 import { validateRequest } from '../middlewares/validateRequest.js';
@@ -17,9 +17,9 @@ const router = Router();
 router.use(authMiddleware);
 
 router.get('/', getTasks);
-router.get('/tasks/:id', getTaskById);
-router.patch('/tasks/:id', validateRequest(taskUpdateSchema), updateTask);
-router.put('/:id', updateTask);
+router.get('/:id', getTaskById);
+router.post('/', createTask);
+router.patch('/:id', validateRequest(taskUpdateSchema), updateTask);
 router.delete('/:id', deleteTask);
 
 export default router;
