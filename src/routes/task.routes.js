@@ -9,7 +9,7 @@ import {
 } from '../controllers/taskController.js';
 import authMiddleware from '../middlewares/authMiddleware.js';
 import { validateRequest } from '../middlewares/validateRequest.js';
-import { taskUpdateSchema } from '../validations/taskValidation.js';
+import { taskCreateSchema, taskUpdateSchema } from '../validations/taskValidation.js';
 
 const router = Router();
 
@@ -18,7 +18,7 @@ router.use(authMiddleware);
 
 router.get('/', getTasks);
 router.get('/:id', getTaskById);
-router.post('/', createTask);
+router.post('/', validateRequest(taskCreateSchema), createTask);
 router.patch('/:id', validateRequest(taskUpdateSchema), updateTask);
 router.delete('/:id', deleteTask);
 
