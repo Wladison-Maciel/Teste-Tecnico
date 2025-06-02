@@ -1,6 +1,5 @@
 import db from '../models/index.js';
 import { findTaskByIdForUser } from '../services/taskService.js';
-import { taskCreateSchema, taskUpdateSchema } from '../validations/taskValidation.js';
 
 const { Task } = db;
 
