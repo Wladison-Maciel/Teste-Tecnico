@@ -15,5 +15,6 @@ export default (sequelize, DataTypes) =>
     userId: DataTypes.INTEGER,
   }, {
     tableName: 'Tasks',
+    paranoid: true,
     timestamps: true,
   });

@@ -7,11 +7,11 @@ export async function up(queryInterface, Sequelize) {
       allowNull: false,
     },
     title: {
-      type: Sequelize.STRING(100), // título com até 100 caracteres
+      type: Sequelize.STRING(100),
       allowNull: false,
     },
     description: {
-      type: Sequelize.STRING(200), // descrição opcional com até 200 caracteres
+      type: Sequelize.STRING(200),
       allowNull: true,
     },
     status: {
@@ -41,6 +41,10 @@ export async function up(queryInterface, Sequelize) {
       type: Sequelize.DATE,
       defaultValue: Sequelize.literal("NOW()"),
       allowNull: false,
+    },
+    deletedAt: {
+      type: Sequelize.DATE,
+      allowNull: true,
     },
   });
 }
