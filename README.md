@@ -34,9 +34,9 @@ A tecnologia utilizada foi o **Express.js**, um framework minimalista e amplamen
    APP_SECRET=[Crie uma senha para assinatura]
    ```
 
-4. Configure o banco SQLite (usando Sequelize):
+4. Inicialize as migrations:
 ```bash
-   npx sequelize-cli db:migrate
+   npm run migrate
    ```
 
 ## ▶️ Como Executar
@@ -46,9 +46,9 @@ A tecnologia utilizada foi o **Express.js**, um framework minimalista e amplamen
 npm run dev
 ```
 
-2. A aplicação estará disponível em http://localhost:3000.
+A aplicação estará disponível em http://localhost:3000.
 
-Acesse a documentação Swagger em:
+2. Acesse a documentação Swagger em:
 ```bash
 http://localhost:3000/api-docs
 ```
@@ -58,7 +58,7 @@ Você pode testar todas as rotas utilizando o Insomnia (ou Postman).
 Importe o arquivo de collection que está na pasta:
 
 ```bash
-src/insomniaCollection/todo-api-insomnia.json
+src/insomniaCollection/insomnia_API_TodoList
 ```
 
 ## 🧱 Arquitetura do Projeto
@@ -102,7 +102,7 @@ fácil de configurar para ambiente local, já o ORM tem bastante suporte para a 
 
 Se tivesse mais tempo, eu implementaria:
 
-✅ Criar arquivos baseados em classes para melhor organização.
+✅ Utilização de POO para melhor organização e estrutura do código.
 
 ✅ Testes automatizados com Jest ou Vitest.
 
