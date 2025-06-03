@@ -4,6 +4,7 @@ import authRoutes from './routes/auth.routes.js';
 import taskRoutes from './routes/task.routes.js';
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "./config/swagger.js";
+import logger from './config/logger.js';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use('/auth', authRoutes);
 
 // Rota simples para teste
 app.get('/', (req, res) => {
+  logger.info('Rota raiz acessada'); 
   res.json({ message: 'API TODO List está no ar' });
 });
 
