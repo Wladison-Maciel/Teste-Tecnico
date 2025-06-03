@@ -1,4 +1,3 @@
-// src/models/task.js
 export default (sequelize, DataTypes) =>
   sequelize.define('Task', {
     id: {

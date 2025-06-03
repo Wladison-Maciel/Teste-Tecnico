@@ -1,9 +1,8 @@
-// src/models/index.js
 import sequelize from '../config/database.js';
 import { DataTypes } from 'sequelize';
 
-import userModel from './user.js';
-import taskModel from './task.js';
+import userModel from './User.js';
+import taskModel from './Task.js';
 
 const User = userModel(sequelize, DataTypes);
 const Task = taskModel(sequelize, DataTypes);
