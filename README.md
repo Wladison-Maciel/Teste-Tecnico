@@ -18,26 +18,34 @@ A tecnologia utilizada foi o **Express.js**, um framework minimalista e amplamen
    git clone https://github.com/Wladison-Maciel/Teste-Tecnico
    cd seu-diretorio
    ```
+---
 
 2. Instale as dependências:
    ```bash
    npm install
    ```
+---
 
-3. Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
+3. No postgreSQL crie um Database e deixe-o ligado para efetuar o passo seguinte.
+
+---
+
+4. Crie um arquivo .env na raiz do projeto(Onde fica o .gitignore) com o seguinte conteúdo:
    ```.env
    DB_HOST=localhost
-   DB_USERNAME=postgres
+   DB_USERNAME=[Seu usuario do PostgreSQL]
    DB_PASSWORD=[Senha do PostgreSQL]
    DB_DATABASE=[Nome do Database]
    DB_DIALECT=postgres
    APP_SECRET=[Crie uma senha para assinatura]
    ```
+---
 
-4. Inicialize as migrations:
+5. Inicialize as migrations:
 ```bash
    npm run migrate
    ```
+---
 
 ## ▶️ Como Executar
 
@@ -48,10 +56,13 @@ npm run dev
 
 A aplicação estará disponível em http://localhost:3000.
 
+---
+
 2. Acesse a documentação Swagger em:
 ```bash
 http://localhost:3000/api-docs
 ```
+---
 
 ## 🧪 Como Testar
 Você pode testar todas as rotas utilizando o Insomnia (ou Postman).
@@ -60,6 +71,8 @@ Importe o arquivo de collection que está na pasta:
 ```bash
 src/insomniaCollection/insomnia_API_TodoList
 ```
+
+---
 
 ## 🧱 Arquitetura do Projeto
 
@@ -81,6 +94,8 @@ src
 
 ```
 
+---
+
 ## 🧠 Decisões Técnicas:
 
 - **Express.js:** por sua leveza e simplicidade, ideal para projetos pequenos e testes técnicos.
@@ -96,7 +111,7 @@ src
 - **PostgreSQL + Sequelize:** banco de dados que pode ser usado tanto em aplicações pequenas quanto grandes e 
 fácil de configurar para ambiente local, já o ORM tem bastante suporte para a utilização conjunta com Postgres
 
-
+---
 
 ## 🚧 Melhorias Futuras
 
@@ -112,4 +127,4 @@ Se tivesse mais tempo, eu implementaria:
 
 ✅ Deploy da API com banco PostgreSQL e autenticação OAuth2.
 
-✅ Reescrever a aplicação em TS pensando em escalabilidade e código consistente.
+✅ Reescrever a aplicação em TS pensando em melhora de código e abordagem da aplicação.
