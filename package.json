@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "migrate" : "npx sequelize-cli db:migrate --config src/config/sequelize-cli-config.cjs --migrations-path src/database/migrations",
+    "migrate": "npx sequelize-cli db:migrate --config src/config/sequelize-cli-config.cjs --migrations-path src/database/migrations",
     "testTask": "node src/test/testTaskService.js"
   },
   "repository": {
@@ -29,6 +29,8 @@
     "pg": "^8.16.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "zod": "^3.25.46"
   },
   "devDependencies": {
